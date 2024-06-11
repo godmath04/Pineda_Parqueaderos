@@ -2,6 +2,7 @@
 public class Puesto {
     // Atributos
     private Carro carro;
+    private int numeroPuesto;
     // Constructores
     public Puesto( int pPuesto )
     {
