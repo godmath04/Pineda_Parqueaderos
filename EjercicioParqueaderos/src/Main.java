@@ -49,6 +49,7 @@ public class Main {
                     System.out.println("Ingrese la placa del carro que desea sacar: ");
                     placasal = bf.readLine();
 
+
                     if (park.sacarCarro(placasal) == Parqueadero.PARQUEADERO_CERRADO) {
                         System.out.println("El parqueadero esta cerrado");
 
@@ -65,13 +66,16 @@ public class Main {
                     break;
                 case 4:
                     System.out.println("Los puestos disponibles son: " + park.calcularPuestosLibres());
+                    break;
                 case 5:
                     park.avanzarHora();
                     System.out.println("Se avanzo una hora en el parqueadero.");
+                    break;
                 case 6:
                     System.out.println("Ingrese el cambio de tarifa");
                     cambioTarifa = Integer.parseInt(bf.readLine());
                     park.cambiarTarifa(cambioTarifa);
+
                     System.out.println("La tarifa ha sido cambiado");
                     break;
                 case 7:
