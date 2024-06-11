@@ -1,3 +1,6 @@
+import java.util.ArrayList;
+
+
 public class Parqueadero {
     // Constantes
     public static final int TAMANO = 40;
@@ -221,6 +224,50 @@ public class Parqueadero {
         return carroMasOcho;
     }
 
-    //TERCERA PARTE DEL EJERCICIOO
+
+    public ArrayList<Carro> darCarrosMasDeTresHorasParqueados() {
+        ArrayList<Carro> carrosMasDeTresH = new ArrayList<>();
+        int tiempoMax = 3;
+
+        for (int i = 0; i < puestos.length; i++) {
+            Puesto puestocontar = puestos[i];
+            Carro carro = puestocontar.darCarro();
+
+            // Verificar si hay un carro en este puesto
+            if (carro != null) {
+                // Calcular el tiempo que el carro ha estado en el parqueadero
+                int tiempoActual = carro.darTiempoEnParqueadero(horaActual);
+
+                // Verificar si el tiempo es mayor a tres horas
+                if (tiempoActual > tiempoMax) {
+                    // Si el tiempo supera las tres horas, agregar el carro al ArrayList
+                    carrosMasDeTresH.add(carro);
+                }
+            }
+        }
+        return carrosMasDeTresH;
+    }
+
+    public boolean hayCarrosPlacaIgual() {
+        for (int i = 0; i < puestos.length; i++) {
+            Carro carro1 = puestos[i].darCarro();
+            if (carro1 != null) {
+                String placaCarro1 = carro1.darPlaca();
+                for (int j = i + 1; j < puestos.length; j++) {
+                    Carro carro2 = puestos[j].darCarro();
+                    if (carro2 != null) {
+                        String placaCarro2 = carro2.darPlaca();
+                        if (placaCarro1.equals(placaCarro2)) {
+                            return true;
+                        }
+                    }
+                }
+            }
+        }
+        return false;
+    }
+    // TERCERA PARTE DEL EJERCICIOOOOO
+
+
 
 }
