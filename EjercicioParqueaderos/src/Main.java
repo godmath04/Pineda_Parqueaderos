@@ -33,7 +33,7 @@ public class Main {
             System.out.println("12. Mostrar información placa PB y carros parqueados por 24 horas o más");
             System.out.println("13. Desocupar el parqueadero ");
 
-            System.out.println("7. salir ");
+            System.out.println("14. salir ");
             opcion = Integer.parseInt(bf.readLine());
 
             switch (opcion) {
@@ -137,7 +137,7 @@ public class Main {
             }
 
 
-        } while (opcion != 10);
+        } while (opcion != 14);
 
 
     }
